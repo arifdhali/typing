@@ -1,0 +1,89 @@
+Demo: https://cdn.dribbble.com/userupload/40277151/file/original-55ca600a203e07ef5156186dbbc805ab.mp4
+🔁 Flowchart: Realtime Typing Game with AI
+
+                +----------------+
+                |   User Login   |
+                +----------------+
+                         |
+                         v
+              +---------------------+
+              | Join/Create Game    |
+              | (Multiplayer Lobby)|
+              +---------------------+
+                         |
+         +------------------------------+
+         | Matchmaking / Add AI Bot     |
+         | (based on WPM, skill level)  |
+         +------------------------------+
+                         |
+                         v
+          +----------------------------------+
+          | Typing Game Room (Socket.IO)     |
+          | Real-time Typing Data Shared     |
+          +----------------------------------+
+            |         |         |
+            |         |         |
+            v         v         v
+   [User 1]  [User 2]  [AI Bot (if added)]
+            (Updates UI in real time)
+                         |
+                         v
+       +----------------------------------+
+       | Typing Pattern Analyzer (AI/NLP) |
+       | - Missed keys, slow words        |
+       | - Feedback & Practice Tips       |
+       +----------------------------------+
+                         |
+                         v
+             +----------------------------+
+             | Show Result + Insights     |
+             | Leaderboard + Suggestions  |
+             +----------------------------+
+
+📁 Folder Structure
+🧩 Angular Frontend (/frontend)
+
+/frontend
+├── /src
+│   ├── /app
+│   │   ├── /auth         # Login/Register components
+│   │   ├── /game         # Typing game UI, socket listeners
+│   │   ├── /lobby        # Multiplayer room / matchmaking
+│   │   ├── /leaderboard  # Scores and rankings
+│   │   ├── /services     # API, WebSocket, Auth
+│   │   ├── /ai-feedback  # Shows personalized AI tips
+│   │   └── app.module.ts
+│   └── main.ts
+├── angular.json
+└── package.json
+
+⚙️ Node.js Backend (/backend)
+
+/backend
+├── /src
+│   ├── /controllers
+│   │   ├── authController.js
+│   │   └── gameController.js
+│   ├── /routes
+│   │   ├── authRoutes.js
+│   │   └── gameRoutes.js
+│   ├── /sockets
+│   │   └── gameSocket.js   # Socket.IO logic for multiplayer typing
+│   ├── /services
+│   │   ├── matchmaker.js   # Match players or add AI bots
+│   │   ├── aiTypingBot.js  # Simulated bot typing behavior
+│   │   └── patternAnalyzer.js # NLP-based feedback generator
+│   ├── app.js
+│   └── server.js
+├── package.json
+
+🤖 Optional: Python AI Service (/ai-service)
+
+/ai-service
+├── generate_text.py       # Use OpenAI to generate typing content
+├── analyze_typing.py      # NLP analyzer for common patterns
+├── ai_bot_speed.py        # Models bot typing logic
+├── requirements.txt
+└── app.py (Flask or FastAPI)
+
+    Use HTTP APIs to communicate between Node.js and this service.
