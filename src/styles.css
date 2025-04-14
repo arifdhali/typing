@@ -64,3 +64,29 @@ li {
     content: '';
     box-shadow: 0 0px 15px rgba(76, 80, 109, .2);
 }
+
+/* navbar.component.css */
+
+.logo-loader-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    /* opacity: 0; */
+  }
+  
+  .logo span {
+    color: #3490dc;
+  }
+  
+  .navbar {
+    /* opacity: 0; */
+    transition: opacity 0.5s ease;
+  }
+  
