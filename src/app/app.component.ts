@@ -1,35 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  selector: 'app-main',
   templateUrl: './app.component.html',
+  imports: [RouterLink],
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  title = 'client'; ngOnInit(): void {
-    gsap.registerPlugin(CSSRulePlugin);
-    let afterElement = CSSRulePlugin.getRule(".ani-btn::after");
-    gsap.set(".animation-text", { display: "none", opacity: 0 });
-    gsap.to(".ani-btn", {
-      width: "200px",
-      onComplete: () => {
-        gsap.to(".animation-text", {
-          opacity: 1,
-          display: "block",
-          onUpdate: () => {
-            gsap.to(afterElement, {
-              width: "30%",
-              duration: .7,
-              ease: "slow(0.7,0.7,false)",
-            })
-          }
-        });
+export class AppComponent {
 
-      }
-    });
+  title = "App Component"
 
-  }
 }
