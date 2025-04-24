@@ -1,0 +1,18 @@
+* duration will be 120 seconds = 2 minute
+let words = [--- here word --- with length];
+1. How to get wpm. (word per minute);
+=> total length / 10seconds 
+
+How to run the match / round==>.
+total time - 10 second  = word. Now get this 10 seconds wpm and this will goes until its matche the total time.
+After every 10 seconds user will see their wpm.
+
+
+
+fun(){
+int length = 10;
+int duration = 60 * 2 = 120s = 2 minutes
+
+   printf(length / duration);
+
+}
